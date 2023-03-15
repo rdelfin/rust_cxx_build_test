@@ -9,6 +9,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
 
 [[package]]
+name = "cc"
+version = "1.0.79"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "50d30906286121d95be3d479533b458f87493b30a4b5f79a607db8f5d11aa91f"
+
+[[package]]
 name = "clap"
 version = "4.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -41,15 +47,22 @@ dependencies = [
 [[package]]
 name = "cxxbridge-cmd"
 version = "1.0.92"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "26f440f36055eb5755743a8e376c9070968eb52ebf909bdf6d00cf63bc73e328"
+source = "git+https://github.com/wayveai/cxxbridge-cmd?tag=1.0.92-wayve#9ba1de8a9bf136fb5344a6ee5c3613386d797e86"
 dependencies = [
+ "cc",
  "clap",
  "codespan-reporting",
+ "cxxbridge-flags",
  "proc-macro2",
  "quote",
  "syn",
 ]
+
+[[package]]
+name = "cxxbridge-flags"
+version = "1.0.92"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "90201c1a650e95ccff1c8c0bb5a343213bdd317c6e600a93075bca2eff54ec97"
 
 [[package]]
 name = "direct-cargo-bazel-deps"

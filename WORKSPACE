@@ -33,7 +33,16 @@ crates_repository(
     lockfile = "//:Cargo.Bazel.lock",
     cargo_lockfile = "//:Cargo.lock",
     packages = {
-        "cxxbridge-cmd": crate.spec(version = "1.0.92"),
+        "cxxbridge-cmd": crate.spec(
+            package = "cxxbridge-cmd",
+            git = "https://github.com/wayveai/cxxbridge-cmd",
+            tag = "1.0.92-wayve",
+        ),
+    },
+    annotations = {
+        "cxxbridge-cmd": [crate.annotation(
+            gen_binaries = ["cxxbridge"],
+        )]
     },
 )
 
